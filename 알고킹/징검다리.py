@@ -1,24 +1,19 @@
-#22871번 징검다리 건너기(large)
 import sys
+
 input = sys.stdin.readline
-N = int(input())
+INF = 1000000
+n = int(input())
+
+data = list(map(int, input().split()))
+
+dp = [INF] * n
+dp[0] = 0
+
+for j in range(n):
+    for i in range(j):
+        power = (j - i) * (1 + abs(data[i] - data[j]))
+        dp[j] = min(dp[j], max(dp[i], power))
 
 
-answer = 0
-point = 0
-
-arr = list(map(int, input().split()))
-for i in range(N):
-    if point > i:
-        continue
-    else:
-        result = float("inf") 
-        for j in range(i+1,N):
-            jump = (j-i) * (1+abs(arr[i]-arr[j]))
-            if jump < answer:
-                answer = jump
-                point = j
-            else:
-                continue
-        answer += result
-print(answer)
+print(dp[n-1])
+#이거 왜 이거인지 모르곘음 솔직히
