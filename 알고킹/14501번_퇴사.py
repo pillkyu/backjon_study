@@ -13,4 +13,3 @@ for i in range(n):
     if i+t <=n:#일을 할 수 있는 경우
         dp[i+t] = max(dp[i+t], dp[i]+p)
 print(dp[n])
-0 0 0 10 30 30 20 45 45 45
