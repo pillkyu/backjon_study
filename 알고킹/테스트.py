@@ -1,2 +1,3 @@
-com_list = [[] for _ in range(10)]
-print(com_list)
+import sys
+from collections import deque
+input = sys.stdin.readline
