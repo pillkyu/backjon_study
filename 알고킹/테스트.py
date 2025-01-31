@@ -1,3 +1,2 @@
-import sys
-from collections import deque
-input = sys.stdin.readline
+visited = [[[0] for _ in range(5)] for _ in range(5)]
+print(visited)
